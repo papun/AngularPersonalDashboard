@@ -1,0 +1,9 @@
+<a [href]="bookmark.url" target="_blank" class="bookmark-tile">
+    <div class="tile-icon" *ngIf="!faviconerr">
+        <img [src]="tileIconSrc" alt="" (error)="faviconerr=true">
+    </div>
+    <div class="tile-icon fallback" *ngIf="faviconerr">
+        {{bookmark.name.toUpperCase()[0]}}
+    </div>
+    <p class="tile-text">{{bookmark.name}}</p>
+</a>

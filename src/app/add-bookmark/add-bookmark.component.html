@@ -1,0 +1,27 @@
+<div class="add-bookmark-wrapper has-blurred-white-bg container">
+
+    <h2 class="is-bold">Add Bookmark</h2>
+    
+    <form #form="ngForm" (ngSubmit)="onFormSubmit(form)" ngNativeValidate>
+        <div class="form-group">
+            <label class="form-label">Name</label>
+            <input type="text" class="text-box" id="text" #text="ngModel" placeholder="e.g. Wikipedia" ngModel name="name" >
+            <!-- <p *ngIf="(text.touched || form.submitted) && text.invalid && text.errors?.['required']" class="errorMsg">Please enter some text for this Bookmark name.</p>
+            <p *ngIf="form.submitted && text.dirty && text.invalid && text.value.length !=0 " class="errorMsg">Bookmark name should be at least 3 characters long</p>
+             -->
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">URL</label>
+            <input type="url" class="text-box" id="text1" #url="ngModel" placeholder="e.g. hhtp://wikipedia.org" ngModel name="url" required="true">
+            <!-- <p *ngIf="(url.touched || form.submitted) && url.invalid && url.errors?.['required']" class="errorMsg">Please enter some text for this URL.</p>
+            <!-- <p *ngIf="form.submitted && url.dirty && url.invalid && url.value.length !=0 " class="errorMsg">Bookmark URL should be at least 3 characters long</p>
+              -->
+        </div>
+    
+        <div class="btns-container">
+            <a routerLink="../" class="btn"> Cancel</a>
+            <button class="btn align-end">Add Bookmark</button>
+        </div>
+    </form>
+</div>
